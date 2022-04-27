@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #222;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin: 0;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.skill-progress {
+  width: 500px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.466);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.skill-progress h1 {
+  text-align: center;
+}
+
+.item {
+}
+
+.item p {
+  /* 자식요소에 float가 들어가면 부모요소는 높이값을 잃어버리게 되는데 overflow:hidden을 주면 높이값을 찾게 됨. 혹은 height로 직접 지정도 가능 */
+  /* border: 1px solid white; */
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.item p span:nth-child(1) {
+  float: left;
+}
+
+.item p span:nth-child(2) {
+  float: right;
+}
+
+.progress {
+  border: 1px solid #6cd4c4;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.progress-level {
+  height: 10px;
+  background: linear-gradient(to right, crimson, gold);
+  animation: ani 1s;
+  /* 100%까지 갔으면 다시 반복하지 말고 그대로 멈추라고 사용되는 것이
+  animation-fill-mode */
+  animation-fill-mode: both;
+}
+
+@keyframes ani {
+  0% {
+    width: 0;
+  }
+}
+
+/* nth-child()와 nth-of-type()의 차이를 잘 알아야 함
+중간에 h태그 p태그등의 것들과 섞여 있으면 nth-of-type을 이용하며
+특정한 클래스를 선택할 것 */
+
+.skill-progress .item:nth-of-type(1) .progress-level {
+  animation-delay: 0s;
+}
+
+.skill-progress .item:nth-of-type(2) .progress-level {
+  animation-delay: 0.2s;
+}
+.skill-progress .item:nth-of-type(3) .progress-level {
+  animation-delay: 0.4s;
+}
+.skill-progress .item:nth-of-type(4) .progress-level {
+  animation-delay: 0.5s;
+}
+.skill-progress .item:nth-of-type(5) .progress-level {
+  animation-delay: 0.8s;
+}
